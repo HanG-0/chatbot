@@ -1,0 +1,23 @@
+name: sign_mediation_agreement
+description: Generate and sign the financial dispute mediation agreement when the user completes down payment or reaches a consensus. Automatically create a legally binding agreement, integrate with electronic signature system, and archive to the loan management system.
+parameters:
+  type: object
+  properties:
+    user_name:
+      type: string
+      description: User name of the borrower
+    repayment_plan:
+      type: string
+      description: Specific mediation plan in text format, describing the agreed repayment arrangements
+    down_payment_amount:
+      type: number
+      description: Down payment amount in RMB (optional)
+    installment_count:
+      type: integer
+      description: Number of installments for repayment (optional)
+    installment_amount:
+      type: number
+      description: Amount of each installment in RMB (optional)
+required:
+  - user_id
+  - repayment_plan
