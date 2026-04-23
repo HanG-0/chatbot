@@ -127,9 +127,7 @@ async def agent_chat(query: str = Body(..., description="用户输入", examples
             auto_executor = create_auto_workflow_executor(
                 # 工作流中，不再使用原来的llm
                 prompt_template=status_transfer_prompt,
-                callbacks = [callback],
-                memory=memory,
-                max_iterations=20
+                memory=memory
             )
 
             while True:
