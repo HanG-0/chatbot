@@ -144,9 +144,8 @@ async def agent_chat(query: str = Body(..., description="用户输入", examples
                         # 处理工作流状态更新
                         if "workflow_state" in result_dict:
                             new_state = result_dict["workflow_state"]
-                            if new_state != status_store:
-                                await r.setex("status_store",3000, new_state)
-                                logger.info(f"更新状态到{new_state}")
+                            await r.setex("status_store",3000, new_state)
+                            logger.info(f"更新状态到{new_state}")
                     except (json.JSONDecodeError, TypeError):
                         # 如果不是JSON格式，直接使用结果作为文本输出
                         pass
