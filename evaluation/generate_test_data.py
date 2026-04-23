@@ -7,7 +7,7 @@ from typing import Dict, List, Any
 import requests
 
 # ================= 配置区 =================
-API_KEY = os.getenv("SILICONFLOW_API_KEY", "")
+API_KEY = os.getenv("SILICONFLOW_API_KEY")
 API_URL = "https://api.siliconflow.cn/v1/chat/completions"
 MODEL_NAME = "deepseek-ai/DeepSeek-V2.5"
 INPUT_FILE = "processed_data/chunks_fixed.json"  # 输入JSON路径
